@@ -3,13 +3,25 @@ package com.company;
 public class InsertionSort {
     public static void insertionSort(int[] arr)
     {
-        //once you have the array, you look at index 1 and the rest and if its less than index 0 you switch the numbers
-        //you take out the number and put it in a temp, then you move every value in the index+1, and then drop the temp
-        //in the empty space where it should be
-        //if youve got like 6 slots open, and you open the 7th, and its less than the 5th but greater than the 4th, you
-        //dont move anything before the 4th but from then on, you put the 7th in a temp, and then move 6 and 5 forward
-        //and then put the 7th in the empty spot
-        //
+        //loop through the entire array, use an index i
+        for(int i = 0; i < arr.length; i++)
+        {
+            //loop from index i back to the beginning of the array, use index j
+            for(int j = i; j > 0; j--)
+            {
+                //if element at j-1 is greater than element at j, swap them
+                if(arr[j-1] > arr[j])
+                {
+                    SortingUtil.swap(arr,j-1,j);
+                }
+                //else set j  to 0
+                else
+                {
+                    j = 0;
+                }
+            }
+
+        }
     }
 
 }
